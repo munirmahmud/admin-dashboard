@@ -17,6 +17,7 @@ import {
 
 const LineChart = () => {
   const { currentMode } = useStateContext();
+
   return (
     <ChartComponent
       id="line-chart"
