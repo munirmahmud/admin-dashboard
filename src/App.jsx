@@ -1,9 +1,9 @@
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { useState } from "react";
 import { FiSettings } from "react-icons/fi";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Sidebar } from "./components";
+import { Navbar, Sidebar } from "./components";
+import { useStateContext } from "./contexts/ContextProvider";
 import {
   Area,
   Bar,
@@ -24,7 +24,8 @@ import {
 } from "./pages";
 
 const App = () => {
-  const [activeMenu, setActiveMenu] = useState(true);
+  const { activeMenu } = useStateContext();
+
   return (
     <div className="flex relative dark:bg-main-dark-bg">
       <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -53,7 +54,11 @@ const App = () => {
         className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
           activeMenu ? "md:ml-72" : "flex-2"
         }`}
-      ></div>
+      >
+        <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+          <Navbar />
+        </div>
+      </div>
 
       <Routes>
         {/* Dashboard */}
