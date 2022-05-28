@@ -1,5 +1,11 @@
+import { Header } from "../components";
+
 const Orders = () => {
-  return <div>Orders</div>;
+  return (
+    <div>
+      <Header category="Page" title="Orders" />
+    </div>
+  );
 };
 
 export default Orders;
