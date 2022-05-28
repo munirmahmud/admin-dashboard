@@ -5,7 +5,6 @@ import {
 } from "@syncfusion/ej2-react-charts";
 
 const SparkLine = ({ currentColor, id, type, height, width, data, color }) => {
-  console.log(data);
   return (
     <SparklineComponent
       id={id}
